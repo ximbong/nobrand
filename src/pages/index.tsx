@@ -4,6 +4,8 @@ import { Button } from '@radix-ui/themes';
 import { Heading1, Heading4 } from '../components/Typography';
 
 import '../styles/index.css';
+import background from '../assets/background.png';
+
 import { mediaQueries } from '../styles/breakpoints';
 
 const Container = styled.div`
@@ -15,7 +17,10 @@ const Container = styled.div`
   height: 100vh;
   background-color: #f8f8f8;
   color: #111;
-  font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${background});
+  background-size: cover;
+  background-position: bottom;
+  color: white;
 `;
 
 const HeroText = styled(Heading1)`
@@ -33,17 +38,19 @@ const SubText = styled(Heading4)`
 `;
 
 const CTAButton = styled(Button)`
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 12px 24px;
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
+  font-family: 'Montserrat', sans-serif;
 
   &:hover {
-    background-color: #333;
+    background-color: black;
+    color: white;
   }
 `;
 
