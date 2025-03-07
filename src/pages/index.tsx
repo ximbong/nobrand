@@ -27,7 +27,7 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   }
 `;
 
@@ -61,6 +61,11 @@ const SubText = styled(Heading2)`
   }
 `;
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
 const CTAButton = styled(Button)`
   background-color: white;
   color: black;
@@ -76,6 +81,17 @@ const CTAButton = styled(Button)`
   &:hover {
     background-color: black;
     color: white;
+  }
+`;
+
+const SecondaryButton = styled(CTAButton)`
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+
+  &:hover {
+    background-color: white;
+    color: black;
   }
 `;
 
@@ -115,7 +131,12 @@ const IndexPage = () => {
         <br />
         Comfortable T-shirt, designed to last.
       </SubText>
-      <CTAButton onClick={() => (window.location.href = '/shop')}>Shop Now</CTAButton>
+      <ButtonsContainer>
+        <CTAButton onClick={() => (window.location.href = '/shop')}>Start shopping</CTAButton>
+        <SecondaryButton onClick={() => (window.location.href = '/about')}>
+          More about us
+        </SecondaryButton>
+      </ButtonsContainer>
     </Container>
   );
 };
