@@ -3,7 +3,7 @@ import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Button } from '@radix-ui/themes';
-import { Heading1, Heading4 } from '../components/Typography';
+import { Heading1, Heading2, Heading4 } from '../components/Typography';
 
 import '../styles/index.css';
 import { mediaQueries } from '../styles/breakpoints';
@@ -48,11 +48,16 @@ const HeroText = styled(Heading1)`
   }
 `;
 
-const SubText = styled(Heading4)`
+const SubText = styled(Heading2)`
   line-height: 1.5;
   font-weight: 400;
   margin-bottom: 2rem;
   z-index: 1;
+  font-size: 1rem;
+
+  ${mediaQueries.aboveMobile} {
+    font-size: 1.25rem;
+  }
 `;
 
 const CTAButton = styled(Button)`
@@ -73,7 +78,13 @@ const CTAButton = styled(Button)`
   }
 `;
 
-export const Head = () => <title>nobrand clothing</title>;
+export const Head = () => (
+  <>
+    <html lang="en" />
+    <title>nobrand clothing</title>
+    <meta name="description" content="Premium, sustainable, brand-free essentials" />
+  </>
+);
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
