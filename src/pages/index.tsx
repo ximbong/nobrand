@@ -4,7 +4,7 @@ import { Button } from '@radix-ui/themes';
 import { Heading1, Heading4 } from '../components/Typography';
 
 import '../styles/index.css';
-import background from '../assets/background.png';
+import background from '../assets/images/background.png';
 
 import { mediaQueries } from '../styles/breakpoints';
 
