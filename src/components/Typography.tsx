@@ -4,14 +4,14 @@ import { mediaQueries } from '../styles/breakpoints';
 const fontFamily = "'Montserrat', sans-serif";
 
 const TypographyBase = styled.p<{
-  color?: string;
-  align?: string;
+  $color?: string;
+  $align?: string;
 }>`
   font-family: ${fontFamily};
   margin: 0;
   padding: 0;
-  color: ${({ color }) => color || 'inherit'};
-  text-align: ${({ align }) => align || 'left'};
+  color: ${({ $color }) => $color || 'inherit'};
+  text-align: ${({ $align }) => $align || 'left'};
 `;
 
 const Heading1 = styled(TypographyBase).attrs({ as: 'h1' })`

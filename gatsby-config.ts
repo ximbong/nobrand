@@ -2,8 +2,9 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `nobrand-clothing`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: 'nobrand clothing',
+    siteUrl: 'https://www.nobrand.clothing',
+    description: 'Premium, sustainable, brand-free essentials',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
