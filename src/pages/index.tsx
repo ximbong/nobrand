@@ -16,7 +16,7 @@ const Container = styled.div`
   justify-content: center;
   text-align: center;
   height: 100vh;
-  color: #111;
+  height: 100dvh;
   color: white;
 
   &::after {
@@ -26,7 +26,7 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
   }
 `;
 
@@ -94,7 +94,9 @@ const IndexPage = () => {
           gatsbyImageData(
             layout: FULL_WIDTH
             placeholder: BLURRED
-            breakpoints: [480, 768, 1024, 1366, 1920]
+            breakpoints: [768, 1366, 1920]
+            formats: [AUTO, WEBP, AVIF]
+            quality: 100
           )
         }
       }
