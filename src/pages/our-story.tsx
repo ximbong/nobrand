@@ -18,6 +18,14 @@ const StyledHeroText = styled(HeroText)`
   margin-bottom: 2rem;
 `;
 
+export const Head = () => (
+  <>
+    <html lang="en" />
+    <title>nobrand clothing</title>
+    <meta name="description" content="Premium, sustainable, brand-free essentials" />
+  </>
+);
+
 const OurStory = () => (
   <Container>
     <StyledHeroText $align="center">
