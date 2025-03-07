@@ -51,7 +51,7 @@ const HeroText = styled(Heading1)`
 const SubText = styled(Heading2)`
   line-height: 1.5;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   z-index: 1;
   font-size: 1rem;
 
