@@ -31,7 +31,7 @@ const Container = styled.div`
 `;
 
 const BackgroundImage = styled(GatsbyImage)`
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
