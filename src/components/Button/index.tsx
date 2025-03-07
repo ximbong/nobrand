@@ -16,7 +16,6 @@ const baseButtonStyles = css`
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: none;
   font-family: 'Montserrat', sans-serif;
   display: inline-flex;
   align-items: center;
@@ -28,9 +27,11 @@ const buttonVariants = {
   primary: css`
     background-color: white;
     color: black;
+    border: 2px solid white;
     &:hover {
       background-color: black;
       color: white;
+      border: 2px solid black;
     }
   `,
   secondary: css`
