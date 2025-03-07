@@ -3,10 +3,11 @@ import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Button } from '@radix-ui/themes';
-import { Heading1, Heading2, Heading4 } from '../components/Typography';
-
-import '../styles/index.css';
+import { Heading1, Heading2 } from '../components/Typography';
 import { mediaQueries } from '../styles/breakpoints';
+
+import '../styles/index.module.css';
+import '../styles/global.css';
 
 const Container = styled.div`
   position: relative;

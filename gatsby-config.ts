@@ -30,13 +30,6 @@ const config: GatsbyConfig = {
       },
       __key: 'images',
     },
-    {
-      resolve: `gatsby-plugin-google-fonts-with-attributes`,
-      options: {
-        fonts: [`Montserrat\:400,600,700`],
-        display: 'swap',
-      },
-    },
   ],
 };
 
