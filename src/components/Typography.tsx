@@ -68,4 +68,10 @@ const SmallText = styled(TypographyBase)`
   }
 `;
 
-export { Heading1, Heading2, Heading3, Heading4, BodyText, SmallText };
+const HeroText = styled(Heading1)`
+  ${mediaQueries.aboveMobile} {
+    font-size: 3rem;
+  }
+`;
+
+export { HeroText, Heading1, Heading2, Heading3, Heading4, BodyText, SmallText };

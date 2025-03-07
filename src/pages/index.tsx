@@ -2,12 +2,12 @@ import React from 'react';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Button } from '@radix-ui/themes';
-import { Heading1, Heading2 } from '../components/Typography';
+import { Heading2, HeroText } from '../components/Typography';
 import { mediaQueries } from '../styles/breakpoints';
 
-import '../styles/index.module.css';
 import '../styles/global.css';
+import { AltButton, PrimaryButton } from '../components/Button';
+import { Button } from '@radix-ui/themes';
 
 const Container = styled.div`
   position: relative;
@@ -40,13 +40,9 @@ const BackgroundImage = styled(GatsbyImage)`
   z-index: -1;
 `;
 
-const HeroText = styled(Heading1)`
+const StyledHeroText = styled(HeroText)`
   margin-bottom: 1rem;
   z-index: 1;
-
-  ${mediaQueries.aboveMobile} {
-    font-size: 3rem;
-  }
 `;
 
 const SubText = styled(Heading2)`
@@ -64,34 +60,9 @@ const SubText = styled(Heading2)`
 const ButtonsContainer = styled.div`
   display: flex;
   gap: 1rem;
-`;
 
-const CTAButton = styled(Button)`
-  background-color: white;
-  color: black;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-  z-index: 1;
-
-  &:hover {
-    background-color: black;
-    color: white;
-  }
-`;
-
-const SecondaryButton = styled(CTAButton)`
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-
-  &:hover {
-    background-color: white;
-    color: black;
+  > * {
+    z-index: 1;
   }
 `;
 
@@ -125,17 +96,15 @@ const IndexPage = () => {
   return (
     <Container>
       <BackgroundImage image={image} alt="Background" />
-      <HeroText $align="center">No labels. Just quality.</HeroText>
+      <StyledHeroText $align="center">No labels. Just quality.</StyledHeroText>
       <SubText $align="center">
         Premium, sustainable, brand-free essentials.
         <br />
         Comfortable T-shirt, designed to last.
       </SubText>
       <ButtonsContainer>
-        <CTAButton onClick={() => (window.location.href = '/shop')}>Start shopping</CTAButton>
-        <SecondaryButton onClick={() => (window.location.href = '/about')}>
-          More about us
-        </SecondaryButton>
+        <PrimaryButton to="/shop">Shop now</PrimaryButton>
+        <AltButton to="/our-story">Our Story</AltButton>
       </ButtonsContainer>
     </Container>
   );
