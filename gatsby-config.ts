@@ -35,9 +35,6 @@ const config: GatsbyConfig = {
       options: {
         fonts: [`Montserrat\:400,600,700`],
         display: 'swap',
-        attributes: {
-          rel: 'stylesheet preload prefetch',
-        },
       },
     },
   ],
