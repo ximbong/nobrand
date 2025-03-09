@@ -7,9 +7,9 @@ import { mediaQueries } from '../styles/breakpoints';
 
 import '../styles/global.css';
 import { AltButton, PrimaryButton } from '../components/Button';
-import { Button } from '@radix-ui/themes';
+import { Layout } from '../components/Layout';
 
-const Container = styled.div`
+const Container = styled(Layout)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -66,14 +66,6 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-export const Head = () => (
-  <>
-    <html lang="en" />
-    <title>nobrand clothing</title>
-    <meta name="description" content="Premium, sustainable, brand-free essentials" />
-  </>
-);
-
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -94,7 +86,7 @@ const IndexPage = () => {
   const image = getImage(data.backgroundImage) as IGatsbyImageData;
 
   return (
-    <Container>
+    <Container noTopNavigation>
       <BackgroundImage image={image} alt="Background" />
       <StyledHeroText $align="center">No labels. Just quality.</StyledHeroText>
       <SubText $align="center">
