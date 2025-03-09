@@ -6,7 +6,7 @@ import React from 'react';
 type ButtonType = 'primary' | 'secondary' | 'alt';
 
 type ButtonProps = {
-  buttonType?: ButtonType;
+  $buttonType?: ButtonType;
   to?: string;
 };
 
@@ -55,25 +55,25 @@ const buttonVariants = {
 };
 
 const StyledButton = styled(RadixButton)<{
-  buttonType: 'primary' | 'secondary' | 'alt';
+  $buttonType: 'primary' | 'secondary' | 'alt';
 }>`
   ${baseButtonStyles}
-  ${({ buttonType }) => buttonVariants[buttonType]}
+  ${({ $buttonType }) => buttonVariants[$buttonType]}
 `;
 
-const ConditionalButton = ({ to, buttonType = 'primary', ...props }: ButtonProps) => {
+const ConditionalButton = ({ to, $buttonType = 'primary', ...props }: ButtonProps) => {
   if (to) {
     return (
       <Link to={to}>
-        <StyledButton buttonType={buttonType} {...props} />
+        <StyledButton $buttonType={$buttonType} {...props} />
       </Link>
     );
   }
-  return <StyledButton buttonType={buttonType} {...props} />;
+  return <StyledButton $buttonType={$buttonType} {...props} />;
 };
 
-const PrimaryButton = ({ ...props }) => <ConditionalButton buttonType="primary" {...props} />;
-const SecondaryButton = ({ ...props }) => <ConditionalButton buttonType="secondary" {...props} />;
-const AltButton = ({ ...props }) => <ConditionalButton buttonType="alt" {...props} />;
+const PrimaryButton = ({ ...props }) => <ConditionalButton $buttonType="primary" {...props} />;
+const SecondaryButton = ({ ...props }) => <ConditionalButton $buttonType="secondary" {...props} />;
+const AltButton = ({ ...props }) => <ConditionalButton $buttonType="alt" {...props} />;
 
 export { PrimaryButton, SecondaryButton, AltButton };
