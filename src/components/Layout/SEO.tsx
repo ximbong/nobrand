@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 
 type SeoProps = {
   title?: string;
   description?: string;
 };
 
-const SEO = ({ title, description }: SeoProps) => (
+const SEO = ({ title, description, children }: PropsWithChildren<SeoProps>) => (
   <>
     <html lang="en" />
     <title>{title ?? 'nobrand clothing'}</title>
@@ -13,6 +13,7 @@ const SEO = ({ title, description }: SeoProps) => (
       name="description"
       content={description ?? 'Premium, sustainable, brand-free essentials'}
     />
+    {children}
   </>
 );
 

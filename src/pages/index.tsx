@@ -8,6 +8,7 @@ import { mediaQueries } from '../styles/breakpoints';
 import '../styles/global.css';
 import { AltButton, PrimaryButton } from '../components/Button';
 import { Layout } from '../components/Layout';
+import { SEO } from '../components/Layout/SEO';
 
 const Container = styled(Layout)`
   position: relative;
@@ -103,3 +104,5 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const Head = () => <SEO />;
